@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// 奇数と偶数を判定
 func main() {
 	for num := 1; num <= 100; num++ {
 		if num % 2 == 0 {
