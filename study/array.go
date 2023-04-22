@@ -25,13 +25,14 @@ func main() {
 		"key": 200,
 		"key2": 300, // カンマ必須
 	}
-
-	println(map1)
+	map2 := make(map[string]int)
+	map3 := make(map[string]int, 10) // 容量を指定して作成
+	map4 := map[string]int {"x": 100, "y": 200}
 
 	map1["key3"] = 400 // 挿入
 	delete(map1, "key") // 削除
 
-	println(map1)
+	println(map1, map2, map3, map4)
 
 	// mapのループ
 	for key, value := range map1 {
