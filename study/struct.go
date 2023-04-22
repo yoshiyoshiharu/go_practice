@@ -2,6 +2,9 @@ package main
 
 import "fmt"
 
+// ユーザー定義型
+type MyInt int
+
 type Person struct {
 	name string
 	age int
@@ -26,4 +29,3 @@ func main() {
 
 	fmt.Println(p1.name, p1.age, p1.Birthday)
 }
-
