@@ -16,7 +16,8 @@ func main() {
 
 	flag.Parse()
 	fmt.Println(*display_line_number)
-	fmt.Println(flag.Args())
+	file_paths := flag.Args()
+	fmt.Println(file_paths)
 }
 
 func printFileContent(file_path string) error {
