@@ -20,6 +20,8 @@ func main() {
 	for _, f := range fs {
 		println(f())
 	}
+
+	deferHello()
 }
 
 func add(x int, y int) int {
@@ -29,4 +31,14 @@ func add(x int, y int) int {
 // 複数の値を返す関数
 func addMinus(x int, y int) (int, int) {
 	return x + y, x - y
+}
+
+// deferは関数終了時に実行
+// スタック形式で実行される(最後に指定したものが最初に実行)
+func deferHello() {
+	msg := "defer1"
+	defer println(msg)
+	msg = "defer2"
+	defer println(msg)
+  println("defer3")
 }
