@@ -9,6 +9,7 @@ import (
 	"fmt"
 	"flag"
 	"os"
+	"bufio"
 )
 
 func main() {
@@ -17,26 +18,28 @@ func main() {
 	flag.Parse()
 	fmt.Println(*display_line_number)
 	file_paths := flag.Args()
-	fmt.Println(file_paths)
+
+	for i := 0; i < len(file_paths); i++ {
+		printFileContent(file_paths[i], *display_line_number)
+	}
 }
 
-func printFileContent(file_path string) error {
+func printFileContent(file_path string, display_line_number bool) error {
 	file, err := os.Open(file_path)
 	if err != nil { return err }
 	defer file.Close()
 
-	data := make([]byte, 1024) // バイト型スライス
-	for {
-		byte_size, err := file.Read(data)
+	line := 1
+	scanner := bufio.NewScanner(file)
 
-		if byte_size == 0 {
-			break
-		}
-		if err != nil {
-			break
+	for scanner.Scan() {
+		if display_line_number {
+		  fmt.Printf("%d: ", line)
 		}
 
-		fmt.Println(string(data[:byte_size])) // バイト型スライスを文字列に変換して表示
+		fmt.Printf("%s\n", scanner.Text())
+		line++
 	}
+
 	return err
 }
