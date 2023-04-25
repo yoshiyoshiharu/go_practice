@@ -20,6 +20,18 @@ func PlusOne(x interface{}) int {
 	return x.(int) + 1
 }
 
+// xの型ごとに場合分け
+func CaseType(x interface{}) {
+	switch v := x.(type) {
+  case int:
+	  println(v * 2)
+  case string:
+	  println(v + "hoge")
+  default:
+		println("default")
+	}
+}
+
 func Printout(x interface{}) {
 	q, ok := x.(Printable)
 
@@ -35,4 +47,8 @@ func main() {
 	person := Person{name: "Taro"}
 	Printout(person)
 	Printout(1)
+
+	CaseType(1)
+	CaseType("aaa")
+	CaseType(4.5)
 }
