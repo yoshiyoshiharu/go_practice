@@ -4,6 +4,8 @@ import "fmt"
 import "time"
 
 // チャネルを用いてゴルーチンの終了を待ち合わせ
+// 複数のごルーチンから共通の変数にアクセスするとスレッドセーフではない
+// 並行処理の順序を制御するためにチャネル
 func parallel_func(channelA chan <- string) {
 	time.Sleep(3 * time.Second)
   channelA <- "3 seconds past!!!!" // <-はチャネルの送受信
