@@ -5,6 +5,8 @@ import "fmt"
 // ユーザー定義型
 type MyInt int
 
+// mapは任意の同型しか持てない → 構造体は固定のキーで色んな型を持てる
+// APIのJSONなどによく使う
 type Person struct {
 	name string
 	age int
