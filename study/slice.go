@@ -24,4 +24,14 @@ func main() {
 	fmt.Println(d[1:3]) // [2, 3]
 	fmt.Println(d[:3])// [1, 2, 3]
 	fmt.Println(d[1:]) // [2, 3, 4]
+
+	s := []int{1, 2, 3, 4}
+	updateSlice(s)
+	fmt.Println(s) // [10, 2, 3, 4] 100はappendされない
+}
+
+// 関数内でスライスの中身は変更できるが、サイズは変更できない
+func updateSlice(s []int) {
+	s[0] = 10
+	s = append(s, 100)
 }
