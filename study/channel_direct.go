@@ -8,12 +8,12 @@ func makeChan() chan int {
 func twowayChan(ch chan int) int {
 	// ch <- 200 これはエラー: チャネルの送信はゴルーチン内でやる
 	go func() { ch <- 200 }()
-	return <- ch
+	return <-ch
 }
 
 // <- chan int は受信専用チャネル
-func recieveChan(recieve <- chan int) int {
-	return <- recieve
+func recieveChan(recieve <-chan int) int {
+	return <-recieve
 }
 
 func main() {
@@ -22,6 +22,6 @@ func main() {
 
 	ch2 := makeChan()
 	// chan <- int は送信専用チャネル
-	go func(ch chan <- int) { ch <- 100 }(ch2)
+	go func(ch chan<- int) { ch <- 100 }(ch2)
 	println(recieveChan(ch2))
 }

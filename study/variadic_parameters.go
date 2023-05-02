@@ -8,7 +8,7 @@ import "fmt"
 func addTo(base int, vals ...int) []int {
 	out := make([]int, 0, len(vals)) // 長さ0で容量がvalsの長さのスライス
 	for _, v := range vals {
-		out = append(out, v + base) // appendは同じ型のスライスを返す
+		out = append(out, v+base) // appendは同じ型のスライスを返す
 	}
 	return out
 }

@@ -3,6 +3,7 @@ package main
 import "fmt"
 
 type Hex int
+
 // Hex型のメソッドを定義
 // 関数定義の前にレシーバを渡す
 func (h Hex) Tostring() string {

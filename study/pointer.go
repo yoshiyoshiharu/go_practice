@@ -6,8 +6,8 @@ func main() {
 	var a1 int = 123
 	var p1 *int // ポインタ変数
 
-	p1 = &a1 // ポインタ変数にアドレスを代入
-	fmt.Println(p1) // アドレスが表示される
+	p1 = &a1         // ポインタ変数にアドレスを代入
+	fmt.Println(p1)  // アドレスが表示される
 	fmt.Println(*p1) // 123 デリファレンス
 
 	var a2 int = 456

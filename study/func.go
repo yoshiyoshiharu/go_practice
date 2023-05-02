@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-  sum := add(2, 4)
+	sum := add(2, 4)
 
 	fmt.Println(sum)
 	fmt.Println(addMinus(1, 2))
@@ -40,5 +40,5 @@ func deferHello() {
 	defer println(msg)
 	msg = "defer2"
 	defer println(msg)
-  println("defer3")
+	println("defer3")
 }

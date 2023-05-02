@@ -3,8 +3,8 @@ package main
 import "fmt"
 
 func main() {
-	var a []int // スライスのゼロ値はnil
-  println(a) // [0/0]0x0
+	var a []int       // スライスのゼロ値はnil
+	println(a)        // [0/0]0x0
 	println(a == nil) // true
 
 	// append
@@ -22,8 +22,8 @@ func main() {
 	// サブスライスはスライスとメモリを共有している
 	d := []int{1, 2, 3, 4}
 	fmt.Println(d[1:3]) // [2, 3]
-	fmt.Println(d[:3])// [1, 2, 3]
-	fmt.Println(d[1:]) // [2, 3, 4]
+	fmt.Println(d[:3])  // [1, 2, 3]
+	fmt.Println(d[1:])  // [2, 3, 4]
 
 	s := []int{1, 2, 3, 4}
 	updateSlice(s)

@@ -8,8 +8,8 @@ type MyInt int
 // mapは任意の同型しか持てない → 構造体は固定のキーで色んな型を持てる
 // APIのJSONなどによく使う
 type Person struct {
-	name string
-	age int
+	name     string
+	age      int
 	Birthday string
 }
 
@@ -25,7 +25,7 @@ func (p *Person) getPerson() (string, int, string) {
 }
 
 func main() {
-  var p1 Person
+	var p1 Person
 
 	p1.setPerson("Taro", 20, "1990/01/01")
 

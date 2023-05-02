@@ -11,7 +11,7 @@ type Person struct {
 }
 
 func (p Person) Tostring() string {
-  return p.name
+	return p.name
 }
 
 // interface{} 任意の型の関数を受け取る
@@ -23,11 +23,11 @@ func PlusOne(x interface{}) int {
 // xの型ごとに場合分け
 func CaseType(x interface{}) {
 	switch v := x.(type) {
-  case int:
-	  println(v * 2)
-  case string:
-	  println(v + "hoge")
-  default:
+	case int:
+		println(v * 2)
+	case string:
+		println(v + "hoge")
+	default:
 		println("default")
 	}
 }

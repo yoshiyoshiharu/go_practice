@@ -3,15 +3,15 @@
 
 package main
 
-import(
+import (
 	"fmt"
 	"sort"
 )
 
-type Person struct{
+type Person struct {
 	FirstName string
-	LastName string
-	Age int
+	LastName  string
+	Age       int
 }
 
 func main() {

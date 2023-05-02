@@ -15,7 +15,7 @@ func Printout(p Printable) { // Printable型の引数
 
 type Person struct {
 	name string
-	age int
+	age  int
 }
 
 type Book struct {
