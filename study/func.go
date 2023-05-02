@@ -33,8 +33,8 @@ func addMinus(x int, y int) (int, int) {
 	return x + y, x - y
 }
 
-// deferは関数終了時に実行
-// スタック形式で実行される(最後に指定したものが最初に実行)
+// deferは関数終了時に実行(returnの後)
+// スタック形式LIFOで実行される(最後に指定したものが最初に実行)
 func deferHello() {
 	msg := "defer1"
 	defer println(msg)
