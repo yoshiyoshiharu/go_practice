@@ -15,5 +15,6 @@ func main() {
 // 第1引数はレスポンスを書き込む先
 // 第2引数はクライアントからのリクエスト
 func handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, "Hello, HTTP server") // 書き込み先を指定して出力
+	fmt.Fprint(w, "Hello") // 書き込み先を指定して出力
+	fmt.Fprintln(w, r.FormValue("msg")) // FormValueでリクエストパラメタを取得
 }
