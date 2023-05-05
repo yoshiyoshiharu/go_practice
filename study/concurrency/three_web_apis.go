@@ -106,7 +106,7 @@ func (p *processor) waitForAB(ctx context.Context) (CIn, error) {
 			return CIn{}, ctx.Err()
 		}
 	}
-	teturn inputC, nil
+	return inputC, nil
 }
 
 func (p *processor) waitForC(ctx context.Context) (COut, error) {
